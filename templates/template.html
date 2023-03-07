@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Parent Template</title>
+    
+    <link rel="stylesheet" href="{{ url_for('static',     filename='css/template.css') }}">
+    
+  </head>
+  <body>
+
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item active">
+            <a class="nav-link" href="{{ url_for('home') }}">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{{ url_for('data') }}">Data</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{{ url_for('enter_name') }}">Add People</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+
+  {% block content %}
+  {% endblock %}
+
+ </body>
+</html>

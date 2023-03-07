@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Home</title>
+  </head>
+  <body>
+    {% extends "template.html" %}
+    {% block content %}
+    
+    <div id="title">
+      <h1>Matchy-Matchy :DDD</h1>
+    </div>
+
+    <div class="matchy-matchy">
+
+      <div class="column">
+        <p>Person 1</p>
+        
+        {% if char1 != None %}
+          {%for char in char1%}
+
+            <h2>{{char[0]}}</h2>
+            <h4>{{char[1]}}</h4>
+            <h4>{{char[2]}}</h4>
+
+          {%endfor%}
+        {% endif %}
+
+      </div>
+      <div class="column">
+        <p>Person 2</p>
+
+        {% if char2 != None %}
+          {%for char in char2%}
+
+            <h2>{{char[0]}}</h2>
+            <h4>{{char[1]}}</h4>
+            <h4>{{char[2]}}</h4>
+
+          {%endfor%}
+        {% endif %}
+
+      </div>
+
+      <form action="#" method="POST" autocomplete="off" id="generate" action="{{ url_for('home') }}">
+        <p><input type="submit" value="generate pair"/></p>
+      </form>
+
+    </div>
+
+    <div class="footer">
+      <p class="footer-text">
+        Dedicated to THE e d w i n a w a n g
+      </p>
+    </div>
+
+    {% endblock %}
+
+  </body>
+</html>

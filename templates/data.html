@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>About Flask</title>
+  </head>
+  <body>
+    {% extends "template.html" %}
+    {% block content %}
+
+    <h1>This should show all the data. I hope.</h1>
+
+    <table class="pure-table">
+      <thead>
+          <tr><th>Name</th><th>Fandom</th><th>Media</th></tr>
+      </thead>
+      <tbody>
+          {% for character in characters %}
+              <tr>
+                  <td> {{character[0]}}</td>
+                  <td> {{character[1]}} </td>
+                  <td> {{character[2]}} </td>
+              </tr>
+          {% endfor %}
+      </tbody>
+    </table>
+
+    {% endblock %}
+  </body>
+</html>
